@@ -1,0 +1,45 @@
+﻿<Page x:Class="Расписание_занятий.Главнаяст"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Расписание_занятий"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Главнаяст" Width="1372" Height="532" Background="White">
+
+    <Grid>
+        <Button  Style="{DynamicResource DefaultButtonStyle}" HorizontalAlignment="Left" VerticalAlignment="Top" Width="170" Height="178"  Margin="10,45,0,0" RenderTransformOrigin="0.5,0.5"     BorderBrush="{x:Null}" Background="{x:Null}">
+            <Image Source="Иконки/л5.png" Height="136" Width="144" Stretch="Fill"/>
+
+        </Button>
+        <TextBlock
+            Text="С  " Margin="104,15,776,439" FontSize="46"  FontFamily="Segoe UI" Foreground="#FF2E2E61"    />
+
+        <TextBlock
+            Text="емилукский  " Margin="134,15,746,439" FontSize="46"  FontFamily="Segoe UI" Foreground="#FF2E2E61"    />
+        <TextBlock
+            Text="д" Margin="148,131,788,327" FontSize="46"  FontFamily="Segoe UI" Foreground="#FF00E59F"    />
+
+        <TextBlock
+            Text="ворец" Margin="172,131,858,327" FontSize="46"  FontFamily="Segoe UI" Foreground="#FF00E59F"    />
+        <TextBlock
+            Text="р" Margin="162,73,774,385" FontSize="46"  FontFamily="Segoe UI" Foreground="#FF00A7F2"    />
+
+        <TextBlock
+            Text="айонный" Margin="190,73,746,385" FontSize="46"  FontFamily="Segoe UI" Foreground="#FF00A7F2" />
+        <TextBlock
+            Text="т" Margin="82,185,854,272" FontSize="46"  FontFamily="Segoe UI" Foreground="#FF02C3AE"    />
+
+        <TextBlock
+            Text="ворчества" Margin="100,185,822,272" FontSize="46"  FontFamily="Segoe UI" Foreground="#FF02C3AE"    />
+        <GroupBox Header="Местоположение" HorizontalAlignment="Left" Height="178" Margin="36,299,0,0" VerticalAlignment="Top" Width="514" BorderBrush="#FF2A2C5D" Background="#FFAAECE5"/>
+
+        <Label Content="Образовательное учреждение «МКУ ДО Семилукский районный Дворец творчества» " HorizontalAlignment="Left" Margin="50,329,0,0" VerticalAlignment="Top"/>
+        <Label Content="находится по адресу:" HorizontalAlignment="Left" Margin="50,355,0,0" VerticalAlignment="Top"/>
+        <Label Content="Город: Семилуки" HorizontalAlignment="Left" Margin="50,381,0,0" VerticalAlignment="Top"/>
+        <Label Content="Улица: Дзержинского" HorizontalAlignment="Left" Margin="50,407,0,0" VerticalAlignment="Top"/>
+        <Label Content="Дом: 10" HorizontalAlignment="Left" Margin="50,433,0,0" VerticalAlignment="Top"/>
+      
+    </Grid>
+</Page>

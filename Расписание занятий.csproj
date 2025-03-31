@@ -1,0 +1,658 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D62D1D94-E29C-4A51-9A5C-0F1A487F966E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Расписание_занятий</RootNamespace>
+    <AssemblyName>Расписание занятий</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>calendar_clock_schedule_icon-icons.com_51085.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1576.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1576.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1576.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1576.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1576.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="ApplicationData\AppConnect.cs" />
+    <Compile Include="ApplicationData\AppFrame.cs" />
+    <Compile Include="ConnectOdb.cs" />
+    <Compile Include="FrameObj.cs" />
+    <Compile Include="Manager.cs" />
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductObg.cs" />
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="Выборвыхода.xaml.cs">
+      <DependentUpon>Выборвыхода.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Главнаяст.xaml.cs">
+      <DependentUpon>Главнаяст.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Главное окно Администратор.xaml.cs">
+      <DependentUpon>Главное окно Администратор.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Главное окно Преподаватель.xaml.cs">
+      <DependentUpon>Главное окно Преподаватель.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Главное окно Ученик.xaml.cs">
+      <DependentUpon>Главное окно Ученик.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Группы.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Группыкласс.cs" />
+    <Compile Include="Группытаб1.xaml.cs">
+      <DependentUpon>Группытаб1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Группытаб2.xaml.cs">
+      <DependentUpon>Группытаб2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Добавить группу.xaml.cs">
+      <DependentUpon>Добавить группу.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Добавить среду.xaml.cs">
+      <DependentUpon>Добавить среду.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Добавить четверг.xaml.cs">
+      <DependentUpon>Добавить четверг.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Добавитьвторник.xaml.cs">
+      <DependentUpon>Добавитьвторник.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Добавитьзаданиевторник.xaml.cs">
+      <DependentUpon>Добавитьзаданиевторник.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Добавитьзаданиепон.xaml.cs">
+      <DependentUpon>Добавитьзаданиепон.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Добавитьзаданиепятница.xaml.cs">
+      <DependentUpon>Добавитьзаданиепятница.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Добавитьзаданиесреда.xaml.cs">
+      <DependentUpon>Добавитьзаданиесреда.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Добавитьзаданиечетверг.xaml.cs">
+      <DependentUpon>Добавитьзаданиечетверг.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Добавитьпон.xaml.cs">
+      <DependentUpon>Добавитьпон.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Добавитьпредметтт.xaml.cs">
+      <DependentUpon>Добавитьпредметтт.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Добавитьпрепод.xaml.cs">
+      <DependentUpon>Добавитьпрепод.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Добавитьпятницу.xaml.cs">
+      <DependentUpon>Добавитьпятницу.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ДобавлениеКабинета.xaml.cs">
+      <DependentUpon>ДобавлениеКабинета.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Кабинеты.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Кабинетытаб1.xaml.cs">
+      <DependentUpon>Кабинетытаб1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Кабинетытаб2.xaml.cs">
+      <DependentUpon>Кабинетытаб2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="КлассПрепод.cs" />
+    <Compile Include="О Программе.xaml.cs">
+      <DependentUpon>О Программе.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Об Авторе.xaml.cs">
+      <DependentUpon>Об Авторе.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Объединения.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Отчёты.xaml.cs">
+      <DependentUpon>Отчёты.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Отчет_преподаватели.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ОтчетГруппы.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ОтчетГруппы.Designer.cs">
+      <DependentUpon>ОтчетГруппы.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ОтчетКабинеты.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ОтчетКабинеты.Designer.cs">
+      <DependentUpon>ОтчетКабинеты.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ОтчетПредметы.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ОтчетПредметы.Designer.cs">
+      <DependentUpon>ОтчетПредметы.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ОтчетПреподаватель.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ОтчетПреподаватель.Designer.cs">
+      <DependentUpon>ОтчетПреподаватель.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ОтчетРасписание.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ОтчетРасписание.Designer.cs">
+      <DependentUpon>ОтчетРасписание.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Отчетыст.xaml.cs">
+      <DependentUpon>Отчетыст.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Педагоги.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Предметытаб1.xaml.cs">
+      <DependentUpon>Предметытаб1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Предметытаб2.xaml.cs">
+      <DependentUpon>Предметытаб2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Преподтаб1.xaml.cs">
+      <DependentUpon>Преподтаб1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Преподтаб2.xaml.cs">
+      <DependentUpon>Преподтаб2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Расписание1.xaml.cs">
+      <DependentUpon>Расписание1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Расписание2.xaml.cs">
+      <DependentUpon>Расписание2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="РасписаниеDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>РасписаниеDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Расписание_вторник.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Расписание_понедельник.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Расписание_пятница.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Расписание_среда.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Расписание_четверг.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Расписаниесередина.xaml.cs">
+      <DependentUpon>Расписаниесередина.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="расписаниеученик.xaml.cs">
+      <DependentUpon>расписаниеученик.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="расписаниеученик2.xaml.cs">
+      <DependentUpon>расписаниеученик2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Расписаниеучитель.xaml.cs">
+      <DependentUpon>Расписаниеучитель.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Расписаниеучитель2.xaml.cs">
+      <DependentUpon>Расписаниеучитель2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Редактированиепон.xaml.cs">
+      <DependentUpon>Редактированиепон.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Редвторник.xaml.cs">
+      <DependentUpon>Редвторник.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="редпятница.xaml.cs">
+      <DependentUpon>редпятница.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Редсреда.xaml.cs">
+      <DependentUpon>Редсреда.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="редчетверг.xaml.cs">
+      <DependentUpon>редчетверг.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Руководство пользователя.xaml.cs">
+      <DependentUpon>Руководство пользователя.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Справочники.xaml.cs">
+      <DependentUpon>Справочники.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Уп.cs" />
+    <Compile Include="УрокиКласс.cs" />
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Выборвыхода.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Главнаяст.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Главное окно Администратор.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Главное окно Преподаватель.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Главное окно Ученик.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Группытаб1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Группытаб2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Добавить группу.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Добавить среду.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Добавить четверг.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Добавитьвторник.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Добавитьзаданиевторник.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Добавитьзаданиепон.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Добавитьзаданиепятница.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Добавитьзаданиесреда.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Добавитьзаданиечетверг.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Добавитьпон.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Добавитьпредметтт.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Добавитьпрепод.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Добавитьпятницу.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ДобавлениеКабинета.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Кабинетытаб1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Кабинетытаб2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="О Программе.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Об Авторе.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Отчёты.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Отчетыст.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Предметытаб1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Предметытаб2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Преподтаб1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Преподтаб2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Расписание1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Расписание2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Расписаниесередина.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="расписаниеученик.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="расписаниеученик2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Расписаниеучитель.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Расписаниеучитель2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Редактированиепон.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Редвторник.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="редпятница.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Редсреда.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="редчетверг.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Руководство пользователя.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Справочники.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Вторник.rdlc" />
+    <EmbeddedResource Include="Отчет Группы.rdlc" />
+    <EmbeddedResource Include="Отчет Кабинеты.rdlc" />
+    <EmbeddedResource Include="Отчет Объединения.rdlc" />
+    <EmbeddedResource Include="Отчет Педагоги.rdlc" />
+    <EmbeddedResource Include="ОтчетГруппы.resx">
+      <DependentUpon>ОтчетГруппы.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ОтчетКабинеты.resx">
+      <DependentUpon>ОтчетКабинеты.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ОтчетПредметы.resx">
+      <DependentUpon>ОтчетПредметы.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ОтчетПреподаватель.resx">
+      <DependentUpon>ОтчетПреподаватель.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ОтчетРасписание.resx">
+      <DependentUpon>ОтчетРасписание.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Понедельник.rdlc" />
+    <EmbeddedResource Include="Пятница.rdlc" />
+    <EmbeddedResource Include="Среда.rdlc" />
+    <EmbeddedResource Include="Четверг.rdlc" />
+    <EntityDeploy Include="Model1.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\Руководство_пользователя1.pdf" />
+    <None Include="РасписаниеDataSet.xsc">
+      <DependentUpon>РасписаниеDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="РасписаниеDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>РасписаниеDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="РасписаниеDataSet.xss">
+      <DependentUpon>РасписаниеDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Иконки\Фон.png" />
+    <Resource Include="Иконки\1.png" />
+    <Resource Include="Иконки\ддт.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Иконки\Ученик.png" />
+    <Resource Include="Иконки\Учитель.png" />
+    <Resource Include="Иконки\Назад.png" />
+    <Resource Include="Иконки\Сохранить.png" />
+    <Resource Include="Иконки\иконка.png" />
+    <Resource Include="Иконки\ФОНавторизация.png" />
+    <Resource Include="Иконки\ФОрегистрация.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Иконки\домдт.png" />
+    <Resource Include="Иконки\Группы.png" />
+    <Resource Include="Иконки\Кабинет.png" />
+    <Resource Include="Иконки\Предметы.png" />
+    <Resource Include="Иконки\Преподаватель.png" />
+    <Resource Include="Иконки\Расписание2.png" />
+    <Resource Include="calendar_clock_schedule_icon-icons.com_51085.ico" />
+    <Resource Include="Иконки\Фон2.png" />
+    <Resource Include="Иконки\ФФон.png" />
+    <Resource Include="Иконки\ФФонменю.png" />
+    <Resource Include="Иконки\Пользователь.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Иконки\Печать.png" />
+    <Resource Include="Иконки\Безымянный.png" />
+    <Resource Include="Иконки\Удалить32.png" />
+    <Resource Include="Иконки\л5.png" />
+    <Resource Include="Иконки\Обновить.png" />
+    <Resource Include="Иконки\Главная.png" />
+    <Resource Include="Иконки\Дисциплины.png" />
+    <Resource Include="Иконки\Добавить.png" />
+    <Resource Include="Иконки\Л1.png" />
+    <Resource Include="Иконки\Л2.png" />
+    <Resource Include="Иконки\Л3.png" />
+    <Resource Include="Иконки\Отчеты.png" />
+    <Resource Include="Иконки\Поиск.png" />
+    <Resource Include="Иконки\Редактировать.png" />
+    <Resource Include="Иконки\Справка.png" />
+    <Resource Include="Иконки\Справочник.png" />
+    <Resource Include="Иконки\Удалить.png" />
+    <None Include="Resources\ФФон.png" />
+    <Content Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

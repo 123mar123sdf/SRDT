@@ -1,0 +1,18 @@
+﻿<Window x:Class="Расписание_занятий.Отчёты"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Расписание_занятий"
+        mc:Ignorable="d"
+        Title="Расписание занятий" Height="740" Width="1380"  WindowStartupLocation="CenterScreen"  Background="#FFF2E5D9">
+    <Grid>
+        <Button Style="{DynamicResource zz}"   Content="Отчет «Расписание»" HorizontalAlignment="Left" VerticalAlignment="Top" Width="292" Margin="519,230,0,0"    Height="60" FontFamily="Segoe UI" Background="{x:Null}" Click="Button_Click_2" />
+        <Button Style="{DynamicResource zz}"   Content="Отчет «Преподаватели»" HorizontalAlignment="Left" VerticalAlignment="Top" Width="286" Margin="521,165,0,0"    Height="60" FontFamily="Segoe UI" Background="{x:Null}" Click="Button_Click_1" />
+        <Button Style="{DynamicResource zz}"   Content="Отчет «Группы»" HorizontalAlignment="Left" VerticalAlignment="Top" Width="292" Margin="519,426,0,0"     Height="60" FontFamily="Segoe UI" Background="{x:Null}" Click="Button_Click_5" />
+        <Button Style="{DynamicResource zz}"   Content="Отчет «Предметы»" HorizontalAlignment="Left" VerticalAlignment="Top" Width="286" Margin="525,358,0,0"     Height="60" FontFamily="Segoe UI" Background="{x:Null}" Click="Button_Click_4" />
+        <Button Style="{DynamicResource zz}"   Content="Отчет «Кабинеты»" HorizontalAlignment="Left" VerticalAlignment="Top" Width="322" Margin="503,294,0,0"     Height="60" FontFamily="Segoe UI" Background="{x:Null}" Click="Button_Click_3" />
+        <Button Style="{DynamicResource zz}"   Content="Назад" HorizontalAlignment="Left" VerticalAlignment="Top" Width="152" Margin="581,566,0,0" Click="Button_Click"    Height="60" FontFamily="Segoe UI" Background="{x:Null}" RenderTransformOrigin="0.5,0.5" />
+
+    </Grid>
+</Window>

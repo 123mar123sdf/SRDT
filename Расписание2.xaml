@@ -1,0 +1,246 @@
+﻿<Page x:Class="Расписание_занятий.Расписание2"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Расписание_занятий"
+      mc:Ignorable="d"
+      Title="Расписание" Height="532" Width="1372">
+
+    <Page.Background>
+        <ImageBrush ImageSource="Иконки/ФФон.png" />
+    </Page.Background>
+    <ScrollViewer >
+        <StackPanel>
+            <Grid Height="1178" Width="1344">
+
+                <StackPanel Orientation="Vertical"
+VerticalAlignment="Center" Margin="104,142,110,855" Height="181">
+                    <DataGrid x:Name= "GridSaleProduct"  ItemsSource="{Binding}" CanUserResizeColumns="False" CanUserResizeRows ="False" AutoGenerateColumns="False" EnableRowVirtualization="True"   RowDetailsVisibilityMode="VisibleWhenSelected"     
+              Height="177"
+                    BorderBrush="#FF688CAF" Background="#FFFFFFFF" Margin="10,0">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header= "Урок" Width="*" Binding="{Binding Номер_урока}"/>
+                            <DataGridTextColumn Header= "Время" Width="*" Binding="{Binding Время}"/>
+                            <DataGridTextColumn Header= "Объединение" Width="*" Binding="{Binding Объединения.Название_объединения}"/>
+                            <DataGridTextColumn Header= "Педагог" Width="*" Binding="{Binding Педагоги.ФИО}"/>
+                            <DataGridTextColumn Header= "Кабинет" Width="*" Binding="{Binding Кабинеты.Наименование_кабинета}"/>
+
+                            <DataGridTemplateColumn Width="auto">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button  Background="{x:Null}"  x:Name="BtnEdit" Click="BtnEdit_Click" BorderBrush="{x:Null}" >
+                                            <Image Source="Иконки/Редактировать.png" Width="20" Height="20" Stretch="Fill" />
+                                        </Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+                <StackPanel Orientation="Vertical"
+HorizontalAlignment="Center"
+VerticalAlignment="Center" Margin="104,365,104,635" Width="1136" Height="178">
+                    <DataGrid x:Name= "GridSaleProduct1" ItemsSource="{Binding}"
+           AutoGenerateColumns= "False"   EnableRowVirtualization="True"   RowDetailsVisibilityMode="VisibleWhenSelected"
+            CanUserAddRows="False" CanUserDeleteRows= "False"
+             CanUserResizeRows ="False" Height="175"
+               CanUserResizeColumns="False" Background="#FFFFFFFF" Margin="10,0"   >
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header= "Урок" Width="*" Binding="{Binding Номер_урока}"/>
+                            <DataGridTextColumn Header= "Время" Width="*" Binding="{Binding Время}"/>
+                            <DataGridTextColumn Header= "Объединение" Width="*" Binding="{Binding Объединения.Название_объединения}"/>
+                            <DataGridTextColumn Header= "Педагог" Width="*" Binding="{Binding Педагоги.ФИО}"/>
+                            <DataGridTextColumn Header= "Кабинет" Width="*" Binding="{Binding Кабинеты.Наименование_кабинета}"/>
+                            <DataGridTemplateColumn Width="auto">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button  Background="{x:Null}"  x:Name="BtnEdit1" Click="BtnEdit1_Click" BorderBrush="{x:Null}" >
+                                            <Image Source="Иконки/Редактировать.png" Width="20" Height="20" Stretch="Fill" />
+
+                                        </Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+                <StackPanel Orientation="Vertical"
+HorizontalAlignment="Center"
+VerticalAlignment="Center" Margin="104,585,104,412" Width="1136" Height="181">
+                    <DataGrid x:Name= "GridSaleProduct2" EnableRowVirtualization="True"   RowDetailsVisibilityMode="VisibleWhenSelected"
+           AutoGenerateColumns= "False"
+            CanUserAddRows="False" CanUserDeleteRows= "False" ItemsSource="{Binding}"
+             CanUserResizeRows ="False" Height="176"
+               CanUserResizeColumns="False" Background="#FFFFFFFF" Margin="10,0"   >
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header= "Урок" Width="*" Binding="{Binding Номер_урока}"/>
+                            <DataGridTextColumn Header= "Время" Width="*" Binding="{Binding Время}"/>
+                            <DataGridTextColumn Header= "Объединение" Width="*" Binding="{Binding Объединения.Название_объединения}"/>
+                            <DataGridTextColumn Header= "Педагог" Width="*" Binding="{Binding Педагоги.ФИО}"/>
+                            <DataGridTextColumn Header= "Кабинет" Width="*" Binding="{Binding Кабинеты.Наименование_кабинета}"/>
+                            <DataGridTemplateColumn Width="auto">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Background="{x:Null}"   x:Name="BtnEdit2" Click="BtnEdit2_Click" BorderBrush="{x:Null}" >
+                                            <Image Source="Иконки/Редактировать.png" Width="20" Height="20" Stretch="Fill" />
+
+                                        </Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+                <StackPanel Orientation="Vertical"
+HorizontalAlignment="Center"
+VerticalAlignment="Center" Margin="104,808,104,202" Width="1136" Height="168">
+                    <DataGrid x:Name= "GridSaleProduct3"  EnableRowVirtualization="True"   RowDetailsVisibilityMode="VisibleWhenSelected"
+           AutoGenerateColumns= "False"
+            CanUserAddRows="False" CanUserDeleteRows= "False" ItemsSource="{Binding}"
+             CanUserResizeRows ="False" Height="163"
+               CanUserResizeColumns="False" Background="#FFFFFFFF" Margin="10,0"  >
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header= "Урок" Width="*" Binding="{Binding Номер_урока}"/>
+                            <DataGridTextColumn Header= "Время" Width="*" Binding="{Binding Время}"/>
+                            <DataGridTextColumn Header= "Объединение" Width="*" Binding="{Binding Объединения.Название_объединения}"/>
+                            <DataGridTextColumn Header= "Педагог" Width="*" Binding="{Binding Педагоги.ФИО}"/>
+                            <DataGridTextColumn Header= "Кабинет" Width="*" Binding="{Binding Кабинеты.Наименование_кабинета}"/>
+                            <DataGridTemplateColumn Width="auto">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button Background="{x:Null}"  x:Name="BtnEdit3" Click="BtnEdit3_Click" BorderBrush="{x:Null}" >
+                                            <Image Source="Иконки/Редактировать.png" Width="20" Height="20" Stretch="Fill" />
+
+                                        </Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+                <StackPanel Orientation="Vertical"
+HorizontalAlignment="Center"
+VerticalAlignment="Center" Margin="104,1018,104,5" Width="1136" Height="155">
+                    <DataGrid x:Name= "GridSaleProduct4"  EnableRowVirtualization="True"   RowDetailsVisibilityMode="VisibleWhenSelected"
+           AutoGenerateColumns= "False"
+            CanUserAddRows="False" CanUserDeleteRows= "False" ItemsSource="{Binding}"
+             CanUserResizeRows ="False" Height="149"
+               CanUserResizeColumns="False" Background="#FFFFFFFF" Margin="10,0"  >
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header= "Урок" Width="*" Binding="{Binding Номер_урока}"/>
+                            <DataGridTextColumn Header= "Время" Width="*" Binding="{Binding Время}"/>
+                            <DataGridTextColumn Header= "Объединение" Width="*" Binding="{Binding Объединения.Название_объединения}"/>
+                            <DataGridTextColumn Header= "Педагог" Width="*" Binding="{Binding Педагоги.ФИО}"/>
+                            <DataGridTextColumn Header= "Кабинет" Width="*" Binding="{Binding Кабинеты.Наименование_кабинета}"/>
+                            <DataGridTemplateColumn Width="auto">
+                                <DataGridTemplateColumn.CellTemplate>
+                                    <DataTemplate>
+                                        <Button  Background="{x:Null}" x:Name="BtnEdit4" Click="BtnEdit4_Click" BorderBrush="{x:Null}" >
+                                            <Image Source="Иконки/Редактировать.png" Width="20" Height="20" Stretch="Fill" />
+
+                                        </Button>
+                                    </DataTemplate>
+                                </DataGridTemplateColumn.CellTemplate>
+                            </DataGridTemplateColumn>
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </StackPanel>
+                <ComboBox x:Name="CmbxProduct"
+Style="{StaticResource mainCmbx}"
+SelectionChanged="CmbxProduct_SelectionChanged" DisplayMemberPath="ФИО" Width="Auto" Margin="187,15,922,1139" FontFamily="Segoe UI" FontSize="14"/>
+                <Label Content="Понедельник" HorizontalContentAlignment="Left"  HorizontalAlignment="Left" Margin="114,117,0,0" VerticalAlignment="Top"   FontFamily="Segoe UI"   FontSize="14" Width="178" Foreground="#FFFF7956" Background="{x:Null}" Height="52"/>
+                <Label Content="Вторник" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="68,340,0,0" VerticalAlignment="Top"   FontFamily="Segoe UI"   FontSize="14"  Width="151" Background="{x:Null}" Height="28" Foreground="#FFFF7956"/>
+                <Label Content="Среда" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="94,560,0,0" VerticalAlignment="Top" FontFamily="Segoe UI" FontSize="14"     Width="93" Background="{x:Null}" Height="47" Foreground="#FFFF7956"/>
+                <Label Content="Четверг" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="73,783,0,0" VerticalAlignment="Top" FontFamily="Segoe UI" FontSize="14"     Width="141" Background="{x:Null}" Height="42" Foreground="#FFFF7956"/>
+                <Label Content="Пятница" HorizontalContentAlignment="Center" HorizontalAlignment="Left" Margin="74,993,0,0" VerticalAlignment="Top" FontFamily="Segoe UI" FontSize="14"     Width="145" Background="{x:Null}" Height="41" Foreground="#FFFF7956"/>
+                <Button Style="{DynamicResource zz}"  HorizontalAlignment="Left" Margin="1151,105,0,0" VerticalAlignment="Top"  Click="Button_Click"  FontFamily="Segoe UI"  RenderTransformOrigin="0.541,0.09" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="{x:Null}" Height="32" Width="32"  >
+                    <Button.ToolTip>
+                        <ToolTip Content="Добавить: Понедельник"/>
+                    </Button.ToolTip>
+                    <Image Source="Иконки/Добавить.png"  Stretch="Fill" Height="32" Width="32"/>
+
+                </Button>
+                <Button Style="{DynamicResource zz}"  HorizontalAlignment="Left" Margin="1192,105,0,0" VerticalAlignment="Top" Width="32" Click="Button_Click_1" FontFamily="Segoe UI"   Height="32" BorderBrush="{x:Null}" Background="{x:Null}"    >
+                    <Button.ToolTip>
+                        <ToolTip Content="Удалить: Понедельник"/>
+                    </Button.ToolTip>
+                    <Image Source="Иконки/Удалить.png"  Stretch="Fill" Height="32" Width="32"/>
+
+                </Button>
+                <Button Style="{DynamicResource zz}"  HorizontalAlignment="Left" Margin="1151,328,0,0" VerticalAlignment="Top" Width="32"   Click="Button_Click_2"  FontFamily="Segoe UI"   Height="32" Background="{x:Null}" BorderBrush="{x:Null}">
+                    <Button.ToolTip>
+                        <ToolTip Content="Добавить: Вторник"/>
+                    </Button.ToolTip>
+                    <Image Source="Иконки/Добавить.png"  Stretch="Fill" Height="32" Width="32"/>
+
+                </Button>
+                <Button Style="{DynamicResource zz}"  HorizontalAlignment="Left" Margin="1192,328,0,0" VerticalAlignment="Top" Width="32"  Click="Button_Click_6" FontFamily="Segoe UI"   Height="32" BorderBrush="{x:Null}" Background="{x:Null}">
+                    <Button.ToolTip>
+                        <ToolTip Content="Удалить: Вторник"/>
+                    </Button.ToolTip>
+                    <Image Source="Иконки/Удалить.png"  Stretch="Fill" Height="32" Width="32"/>
+
+                </Button>
+                <Button Style="{DynamicResource zz}"  HorizontalAlignment="Left" Margin="1151,548,0,0" VerticalAlignment="Top" Width="32"   Click="Button_Click_3" FontFamily="Segoe UI"  Height="32" RenderTransformOrigin="1.019,-0.744" Background="{x:Null}">
+                    <Button.ToolTip>
+                        <ToolTip Content="Добавить: Среда"/>
+                    </Button.ToolTip>
+                    <Image Source="Иконки/Добавить.png"  Stretch="Fill" Height="32" Width="32"/>
+
+                </Button>
+                <Button Style="{DynamicResource zz}"  HorizontalAlignment="Left" Margin="1192,548,0,0" VerticalAlignment="Top" Width="32"   Click="Button_Click_7"  FontFamily="Segoe UI"  Height="32" RenderTransformOrigin="0.532,0.179" Background="{x:Null}">
+                    <Button.ToolTip>
+                        <ToolTip Content="Удалить: Среда"/>
+                    </Button.ToolTip>
+                    <Image Source="Иконки/Удалить.png"  Stretch="Fill" Height="32" Width="32"/>
+
+                </Button>
+                <Button Style="{DynamicResource zz}"  HorizontalAlignment="Left" Margin="1151,771,0,0" VerticalAlignment="Top" Width="32"   Click="Button_Click_4" FontFamily="Segoe UI"  Height="32" Background="{x:Null}">
+                    <Button.ToolTip>
+                        <ToolTip Content="Добавить: Четверг"/>
+                    </Button.ToolTip>
+                    <Image Source="Иконки/Добавить.png"  Stretch="Fill" Height="32" Width="32"/>
+
+                </Button>
+                <Button Style="{DynamicResource zz}"  HorizontalAlignment="Left" Margin="1192,771,0,0" VerticalAlignment="Top" Width="32"  Click="Button_Click_8"  FontFamily="Segoe UI"  Height="32" Background="{x:Null}">
+                    <Button.ToolTip>
+                        <ToolTip Content="Удалить: Четверг"/>
+                    </Button.ToolTip>
+                    <Image Source="Иконки/Удалить.png"  Stretch="Fill" Height="32" Width="32"/>
+
+                </Button>
+                <Button Style="{DynamicResource zz}"  HorizontalAlignment="Left" Margin="1151,981,0,0" VerticalAlignment="Top" Width="32"   Click="Button_Click_5"  FontFamily="Segoe UI" Height="32" Background="{x:Null}">
+                    <Button.ToolTip>
+                        <ToolTip Content="Добавить: Пятница"/>
+                    </Button.ToolTip>
+                    <Image Source="Иконки/Добавить.png"  Stretch="Fill" Height="32" Width="32"/>
+
+                </Button>
+                <Button Style="{DynamicResource zz}"  HorizontalAlignment="Left" Margin="1192,981,0,0" VerticalAlignment="Top" Width="32"   Click="Button_Click_9"  FontFamily="Segoe UI"  Height="32" Background="{x:Null}">
+                    <Button.ToolTip>
+                        <ToolTip Content="Удалить: Пятница"/>
+                    </Button.ToolTip>
+                    <Image Source="Иконки/Удалить.png"  Stretch="Fill" Height="32" Width="32"/>
+
+                </Button>
+                <Label Content="Выбирите педагога:" HorizontalAlignment="Left" Margin="31,10,0,0" VerticalAlignment="Top" FontSize="14" Foreground="#FFFF7956" Background="{x:Null}"/>
+                <Label Content="РАСПИСАНИЕ" HorizontalAlignment="Left" VerticalAlignment="Top" FontSize="25" Margin="580,54,0,0" Foreground="#FFFF7956" Width="182"/>
+                <Button Style="{DynamicResource zz}"   HorizontalAlignment="Left" Margin="433,10,0,0" VerticalAlignment="Top" Width="45" Click="Button_Click12" FontFamily="Segoe UI" FontSize="20" Height="32" RenderTransformOrigin="0.349,0.344" Background="{x:Null}" BorderBrush="{x:Null}">
+                    <Button.ToolTip>
+                        <ToolTip Content="Показать всё"/>
+                    </Button.ToolTip>
+                    <Image Source="Иконки/Обновить.png"  Stretch="Fill" Height="32" Width="32"/>
+
+                </Button>
+                <Button Style="{DynamicResource DefaultButtonStyle}" HorizontalAlignment="Left" Margin="491,5,0,0" VerticalAlignment="Top" Width="40" Height="40" Background="{x:Null}" BorderBrush="{x:Null}" Click="Button_Click_11" >
+                    <Button.ToolTip>
+                        <ToolTip Content="Очет"/>
+                    </Button.ToolTip>
+                    <Image Source="Иконки/Отчеты.png"  Stretch="Fill" Height="32" Width="32"/>
+                </Button>
+
+            </Grid>
+        </StackPanel>
+    </ScrollViewer>
+</Page>

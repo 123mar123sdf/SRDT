@@ -1,0 +1,170 @@
+﻿<Page x:Class="Расписание_занятий.Добавитьпон"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:Расписание_занятий"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="Добавитьпон"  Height="532" Width="1372">
+
+    <Grid Margin="0,10,0,0">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="433*"/>
+            <ColumnDefinition Width="367*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="textq" Text="{Binding ID_Педагога}"  HorizontalAlignment="Left" Height="35" Margin="203,241,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="36" TextChanged="TextBox_TextChanged" Grid.Column="1" />
+        <TextBox x:Name="textp" Text="{Binding ID_Группы}"  HorizontalAlignment="Left" Height="37" Margin="203,291,0,0" TextWrapping="Wrap"  VerticalAlignment="Top" Width="36" TextChanged="TextBox_TextChanged"  Grid.Column="1" RenderTransformOrigin="1.866,-0.252" />
+
+        <Border BorderThickness="1" HorizontalAlignment="Right" Height="502" Margin="0,10,144,0" VerticalAlignment="Top" Width="956" Background="White" Grid.ColumnSpan="2"/>
+
+        <Label Content="Расписание: Понедельник" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"   FontFamily="Segoe UI" FontSize="12"/>
+        <ComboBox x:Name="ComboBox1" Text="{Binding Номер_урока}"  HorizontalAlignment="Left" Height="24"   VerticalAlignment="Top" Width="312" Margin="603,104,0,0" SelectionChanged="ComboBox1_SelectionChanged_1" FontFamily="Tahoma"   FontSize="12" Grid.ColumnSpan="2">
+            <Label Content="1"/>
+            <Label Content="2"/>
+            <Label Content="3"/>
+            <Label Content="4"/>
+            <Label Content="5"/>
+            <Label Content="6"/>
+        </ComboBox>
+        <Button Style="{DynamicResource DefaultButtonStyle}"  HorizontalAlignment="Left" VerticalAlignment="Top" Width="69" Margin="251,341,0,0" Click="Button_Click"  Height="73" Background="{x:Null}" BorderBrush="{x:Null}" Grid.Column="1">
+            <Image Source="Иконки/Сохранить.png" Height="32" Width="32"/>
+        </Button>
+        <ComboBox x:Name="ComboBox1_Copy3" DisplayMemberPath="Наименование_кабинета"  HorizontalAlignment="Left" Height="23"  SelectedItem="{Binding Кабинеты}"  VerticalAlignment="Top" Width="312" Margin="603,341,0,0" FontFamily="Tahoma"   FontSize="12" Grid.ColumnSpan="2" SelectionChanged="ComboBox1_Copy3_SelectionChanged"/>
+        <ComboBox x:Name="ComboBox1_Copy4" DisplayMemberPath="Название_объединения"  HorizontalAlignment="Left" Height="24"  SelectedItem="{Binding Объединения}"  VerticalAlignment="Top" Width="312" Margin="603,190,0,0" SelectionChanged="ComboBox1_Copy4_SelectionChanged_1" FontFamily="Tahoma"   FontSize="12" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="text" Text="{Binding Время}"  HorizontalAlignment="Left" Height="24" Margin="603,147,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="312" TextChanged="Text_TextChanged_1" FontFamily="Tahoma"   FontSize="12" Grid.ColumnSpan="2">
+            <TextBox.ToolTip>
+                <ToolTip  Background="#9AAE4130" Foreground="White" HasDropShadow="False"
+                    Placement="Relative" HorizontalOffset="15" VerticalOffset="10" Content="1 урок (08:30-09:30) 2 урок (09:45-10:45) 3 урок (11:15-12:15) 4 урок (12:25-13:25) 5 урок (13:30-14:30) 6 урок (14:40-15:40)"/>
+            </TextBox.ToolTip>
+        </TextBox>
+        <Label x:Name="label" Content="Номер урока:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="480,103,0,0" FontSize="12" FontFamily="Segoe UI"  />
+        <Label x:Name="label_Copy" Content="Время:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="480,146,0,0" FontSize="12" FontFamily="Segoe UI"  />
+        <Label x:Name="label_Copy1" Content="Объединение" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="480,193,0,0" FontSize="12" FontFamily="Segoe UI"  />
+        <Label x:Name="label_Copy2" Content="Педагог:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="480,239,0,0" FontSize="12" FontFamily="Segoe UI"  />
+        <Label x:Name="label_Copy3" Content="Кабинет:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="480,339,0,0" FontSize="12" FontFamily="Segoe UI"  />
+        <Label x:Name="label_Copy5" Content="Группа:" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="480,290,0,0" FontSize="12" FontFamily="Segoe UI"  />
+        <ComboBox x:Name="Педагог1"  HorizontalAlignment="Left" Height="25"    VerticalAlignment="Top" Width="312" Margin="603,241,0,0" SelectionChanged="Педагог1_SelectionChanged" FontFamily="Tahoma" FontSize="12" Grid.ColumnSpan="2" >
+            <Label Content="Шевлякова Ирина Сергеевна"/>
+        </ComboBox>
+        <ComboBox x:Name="Педагог2" Visibility="Hidden" HorizontalAlignment="Left" Height="25"    VerticalAlignment="Top" Width="312" Margin="603,241,0,0" SelectionChanged="Педагог2_SelectionChanged" FontFamily="Tahoma" FontSize="12" Grid.ColumnSpan="2" >
+            <Label Content="Турищева Александра Николаевна"/>
+        </ComboBox>
+        <ComboBox x:Name="Педагог3" Visibility="Hidden" HorizontalAlignment="Left" Height="25"    VerticalAlignment="Top" Width="312" Margin="603,241,0,0" SelectionChanged="Педагог3_SelectionChanged" FontFamily="Tahoma" FontSize="12" Grid.ColumnSpan="2" >
+            <Label Content="Таранина Дарья Алексеевна"/>
+        </ComboBox>
+        <ComboBox x:Name="Педагог4" Visibility="Hidden"  HorizontalAlignment="Left" Height="25"    VerticalAlignment="Top" Width="312" Margin="603,241,0,0" SelectionChanged="Педагог4_SelectionChanged" FontFamily="Tahoma" FontSize="12" Grid.ColumnSpan="2" >
+            <Label Content="Бондарь Алёна Ивановна"/>
+        </ComboBox>
+        <ComboBox x:Name="Педагог5" Visibility="Hidden" HorizontalAlignment="Left" Height="25"    VerticalAlignment="Top" Width="312" Margin="603,241,0,0" SelectionChanged="Педагог5_SelectionChanged" FontFamily="Tahoma" FontSize="12" Grid.ColumnSpan="2" >
+            <Label Content="Маслова Валерия Викторовна"/>
+        </ComboBox>
+        <ComboBox x:Name="Педагог6" Visibility="Hidden" HorizontalAlignment="Left" Height="25"    VerticalAlignment="Top" Width="312" Margin="603,241,0,0" SelectionChanged="Педагог6_SelectionChanged" FontFamily="Tahoma" FontSize="12" Grid.ColumnSpan="2" >
+            <Label Content="Першин Максим Викторович"/>
+        </ComboBox>
+        <ComboBox x:Name="Педагог7" Visibility="Hidden" HorizontalAlignment="Left" Height="25"    VerticalAlignment="Top" Width="312" Margin="603,241,0,0" SelectionChanged="Педагог7_SelectionChanged" FontFamily="Tahoma" FontSize="12" Grid.ColumnSpan="2" >
+            <Label Content="Кожевникова Дарья Николаевна"/>
+        </ComboBox>
+        <ComboBox x:Name="Педагог8" Visibility="Hidden" HorizontalAlignment="Left" Height="25"    VerticalAlignment="Top" Width="312" Margin="603,241,0,0" SelectionChanged="Педагог8_SelectionChanged" FontFamily="Tahoma" FontSize="12" Grid.ColumnSpan="2" >
+            <Label Content="Тюнина Валентина Сергеевна"/>
+        </ComboBox>
+        <ComboBox x:Name="Педагог9" Visibility="Hidden" HorizontalAlignment="Left" Height="25"    VerticalAlignment="Top" Width="312" Margin="603,241,0,0" SelectionChanged="Педагог9_SelectionChanged" FontFamily="Tahoma" FontSize="12" Grid.ColumnSpan="2" >
+            <Label Content="Черкасов Андрей Николаевич"/>
+        </ComboBox>
+        <ComboBox x:Name="Педагог10" Visibility="Hidden" HorizontalAlignment="Left" Height="25"    VerticalAlignment="Top" Width="312" Margin="603,241,0,0" SelectionChanged="Педагог10_SelectionChanged" FontFamily="Tahoma" FontSize="12" Grid.ColumnSpan="2" >
+            <Label Content="Квасова Любовь Олеговна"/>
+        </ComboBox>
+        <ComboBox x:Name="Педагог11" Visibility="Hidden" HorizontalAlignment="Left" Height="25"    VerticalAlignment="Top" Width="312" Margin="603,241,0,0" SelectionChanged="Педагог11_SelectionChanged" FontFamily="Tahoma" FontSize="12" Grid.ColumnSpan="2" >
+            <Label Content="Меремьянина Надежда Анатольевна"/>
+        </ComboBox>
+        <ComboBox x:Name="Педагог12" Visibility="Hidden" HorizontalAlignment="Left" Height="25"    VerticalAlignment="Top" Width="312" Margin="603,241,0,0" SelectionChanged="Педагог12_SelectionChanged" FontFamily="Tahoma" FontSize="12" Grid.ColumnSpan="2" >
+            <Label Content="Гунькина Алина Викторовна"/>
+        </ComboBox>
+        <ComboBox x:Name="Педагог13" Visibility="Hidden" HorizontalAlignment="Left" Height="25"    VerticalAlignment="Top" Width="312" Margin="603,241,0,0" SelectionChanged="Педагог13_SelectionChanged" FontFamily="Tahoma" FontSize="12" Grid.ColumnSpan="2" >
+            <Label Content="Сидельникова Татьяна Николаевна"/>
+        </ComboBox>
+        <ComboBox x:Name="Педагог14" Visibility="Hidden" HorizontalAlignment="Left" Height="25"    VerticalAlignment="Top" Width="312" Margin="603,241,0,0" SelectionChanged="Педагог14_SelectionChanged" FontFamily="Tahoma" FontSize="12" Grid.ColumnSpan="2" >
+            <Label Content="Авдеевва Зинаида Петровна"/>
+        </ComboBox>
+        <ComboBox x:Name="Педагог15" Visibility="Hidden" HorizontalAlignment="Left" Height="25"    VerticalAlignment="Top" Width="312" Margin="603,241,0,0" SelectionChanged="Педагог15_SelectionChanged" FontFamily="Tahoma" FontSize="12" Grid.ColumnSpan="2" >
+            <Label Content="Павлов Антон Олегович"/>
+        </ComboBox>
+
+
+        <ComboBox x:Name="Группа1"  HorizontalAlignment="Left" Height="25"    VerticalAlignment="Top" Width="312" Margin="603,291,0,0" SelectionChanged="Группа1_SelectionChanged" FontFamily="Tahoma" FontSize="12" Grid.ColumnSpan="2" >
+            <Label Content="Группа 1. Один год обучения"/>
+        </ComboBox>
+        <ComboBox x:Name="Группа2" Visibility="Hidden" HorizontalAlignment="Left" Height="25"    VerticalAlignment="Top" Width="312" Margin="603,291,0,0" SelectionChanged="Группа2_SelectionChanged" FontFamily="Tahoma" FontSize="12" Grid.ColumnSpan="2" >
+            <Label Content="Группа 2. Один год обучения"/>
+            <Label Content="Группа 2. Два года обучения"/>
+        </ComboBox>
+        <ComboBox x:Name="Группа3" Visibility="Hidden" HorizontalAlignment="Left" Height="25"    VerticalAlignment="Top" Width="312" Margin="603,291,0,0" SelectionChanged="Группа3_SelectionChanged" FontFamily="Tahoma" FontSize="12" Grid.ColumnSpan="2" >
+            <Label Content="Группа 3. Один год обучения"/>
+            <Label Content="Группа 3. Два года обучения"/>
+        </ComboBox>
+        <ComboBox x:Name="Группа4" Visibility="Hidden" HorizontalAlignment="Left" Height="25"    VerticalAlignment="Top" Width="312" Margin="603,291,0,0" SelectionChanged="Группа4_SelectionChanged" FontFamily="Tahoma" FontSize="12" Grid.ColumnSpan="2" >
+            <Label Content="Группа 4. Один год обучения"/>
+            <Label Content="Группа 4. Два года обучения"/>
+        </ComboBox>
+        <ComboBox x:Name="Группа5" Visibility="Hidden" HorizontalAlignment="Left" Height="25"    VerticalAlignment="Top" Width="312" Margin="603,291,0,0" SelectionChanged="Группа5_SelectionChanged" FontFamily="Tahoma" FontSize="12" Grid.ColumnSpan="2" >
+            <Label Content="Группа 5. Два года обучения"/>
+            <Label Content="Группа 5. Три года обучения"/>
+        </ComboBox>
+        <ComboBox x:Name="Группа6" Visibility="Hidden" HorizontalAlignment="Left" Height="25"    VerticalAlignment="Top" Width="312" Margin="603,291,0,0" SelectionChanged="Группа6_SelectionChanged" FontFamily="Tahoma" FontSize="12" Grid.ColumnSpan="2" >
+            <Label Content="Группа 6. Один год обучения"/>
+            <Label Content="Группа 6. Два года обучения"/>
+        </ComboBox>
+        <ComboBox x:Name="Группа7" Visibility="Hidden" HorizontalAlignment="Left" Height="25"    VerticalAlignment="Top" Width="312" Margin="603,291,0,0" SelectionChanged="Группа7_SelectionChanged" FontFamily="Tahoma" FontSize="12" Grid.ColumnSpan="2" >
+            <Label Content="Группа 7. Два года обучения"/>
+            <Label Content="Группа 7. Три года обучения"/>
+        </ComboBox>
+        <ComboBox x:Name="Группа8" Visibility="Hidden" HorizontalAlignment="Left" Height="25"    VerticalAlignment="Top" Width="312" Margin="603,291,0,0" SelectionChanged="Группа8_SelectionChanged" FontFamily="Tahoma" FontSize="12" Grid.ColumnSpan="2" >
+            <Label Content="Группа 8. Один год обучения"/>
+            <Label Content="Группа 8. Два года обучения"/>
+        </ComboBox>
+        <ComboBox x:Name="Группа9" Visibility="Hidden" HorizontalAlignment="Left" Height="25"    VerticalAlignment="Top" Width="312" Margin="603,291,0,0" SelectionChanged="Группа9_SelectionChanged" FontFamily="Tahoma" FontSize="12" Grid.ColumnSpan="2" >
+            <Label Content="Группа 9. Один год обучения"/>
+            <Label Content="Группа 9. Два года обучения"/>
+        </ComboBox>
+        <ComboBox x:Name="Группа10" Visibility="Hidden" HorizontalAlignment="Left" Height="25"    VerticalAlignment="Top" Width="312" Margin="603,291,0,0" SelectionChanged="Группа10_SelectionChanged" FontFamily="Tahoma" FontSize="12" Grid.ColumnSpan="2" >
+            <Label Content="Группа 10. Один год обучения"/>
+            <Label Content="Группа 10. Два года обучения"/>
+        </ComboBox>
+        <ComboBox x:Name="Группа11" Visibility="Hidden" HorizontalAlignment="Left" Height="25"    VerticalAlignment="Top" Width="312" Margin="603,291,0,0" SelectionChanged="Группа11_SelectionChanged" FontFamily="Tahoma" FontSize="12" Grid.ColumnSpan="2" >
+            <Label Content="Группа 11. Два года обучения"/>
+            <Label Content="Группа 11. Три года обучения"/>
+        </ComboBox>
+        <ComboBox x:Name="Группа12" Visibility="Hidden"  HorizontalAlignment="Left" Height="25"    VerticalAlignment="Top" Width="312" Margin="603,291,0,0" SelectionChanged="Группа12_SelectionChanged" FontFamily="Tahoma" FontSize="12" Grid.ColumnSpan="2" >
+            <Label Content="Группа 12. Один год обучения"/>
+        </ComboBox>
+        <ComboBox x:Name="Группа13" Visibility="Hidden" HorizontalAlignment="Left" Height="25"    VerticalAlignment="Top" Width="312" Margin="603,291,0,0" SelectionChanged="Группа13_SelectionChanged" FontFamily="Tahoma" FontSize="12" Grid.ColumnSpan="2" >
+            <Label Content="Группа 13. Один год обучения"/>
+        </ComboBox>
+        <ComboBox x:Name="Группа14" Visibility="Hidden" HorizontalAlignment="Left" Height="25"    VerticalAlignment="Top" Width="312" Margin="603,291,0,0" SelectionChanged="Группа14_SelectionChanged" FontFamily="Tahoma" FontSize="12" Grid.ColumnSpan="2" >
+            <Label Content="Группа 14. Два года обучения"/>
+        </ComboBox>
+        <ComboBox x:Name="Группа15" Visibility="Hidden" HorizontalAlignment="Left" Height="25"    VerticalAlignment="Top" Width="312" Margin="603,291,0,0" SelectionChanged="Группа15_SelectionChanged" FontFamily="Tahoma" FontSize="12" Grid.ColumnSpan="2" >
+            <Label Content="Группа 15. Один год обучения"/>
+        </ComboBox>
+        <ComboBox x:Name="Группа16" Visibility="Hidden" HorizontalAlignment="Left" Height="25"    VerticalAlignment="Top" Width="312" Margin="603,291,0,0" SelectionChanged="Группа16_SelectionChanged" FontFamily="Tahoma" FontSize="12" Grid.ColumnSpan="2" >
+            <Label Content="Группа 16. Два года обучения"/>
+        </ComboBox>
+        <ComboBox x:Name="Группа17" Visibility="Hidden" HorizontalAlignment="Left" Height="25"    VerticalAlignment="Top" Width="312" Margin="603,291,0,0" SelectionChanged="Группа17_SelectionChanged" FontFamily="Tahoma" FontSize="12" Grid.ColumnSpan="2" >
+            <Label Content="Группа 17. Два года обучения"/>
+        </ComboBox>
+        <ComboBox x:Name="Группа18" Visibility="Hidden" HorizontalAlignment="Left" Height="25"    VerticalAlignment="Top" Width="312" Margin="603,291,0,0" SelectionChanged="Группа18_SelectionChanged" FontFamily="Tahoma" FontSize="12" Grid.ColumnSpan="2" >
+            <Label Content="Группа 18. Два года обучения"/>
+        </ComboBox>
+        <ComboBox x:Name="Группа19" Visibility="Hidden" HorizontalAlignment="Left" Height="25"    VerticalAlignment="Top" Width="312" Margin="603,291,0,0" SelectionChanged="Группа19_SelectionChanged" FontFamily="Tahoma" FontSize="12" Grid.ColumnSpan="2" >
+            <Label Content="Группа 19. Два года обучения"/>
+        </ComboBox>
+        <ComboBox x:Name="Группа20" Visibility="Hidden" HorizontalAlignment="Left" Height="25"    VerticalAlignment="Top" Width="312" Margin="603,291,0,0" SelectionChanged="Группа20_SelectionChanged" FontFamily="Tahoma" FontSize="12" Grid.ColumnSpan="2" >
+            <Label Content="Группа 20. Один год обучения"/>
+        </ComboBox>
+
+
+
+    </Grid>
+</Page>
+
